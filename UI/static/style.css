@@ -286,6 +286,23 @@ input[type=text]:focus, input[type=password]:focus {
 }
 /* End of admin page */
 
+/* Style the profile-page */
+.edit-profile h4 {
+    text-align: center;
+}
+.edit-profile a {
+    text-decoration: none;
+}
+.profile-container {
+    display: flex;
+    flex-wrap: wrap;
+}
+.profile-container h4 {
+    text-align: center;
+}
+
+/* End profile styling */
+
 /* Style the footer */
 .footer {
     position: fixed;
