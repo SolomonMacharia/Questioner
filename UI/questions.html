@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Questioner</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="static/style.css">
+</head>
+<body>
+    <div class="header">
+        <a href="#" class="logo">Questioner</a>
+        <div class="header-right">
+            <a href="signin.html" class="active">Sign in</a>
+        </div>
+    </div>
+    <div class="topnav">
+        <a href="home.html">Home</a>
+        <a href="questions.html">Questions</a>
+        <div class="topnav-right">
+            <a href="profile.html">Profile</a>
+            <a href="admin.html">Admin</a>
+        </div>
+    </div>
+    <!-- Questions section -->
+    <div class="question-container">
+        <div class="posted-questions">
+            <h4><a href="questions.html">Recently asked questions</a></h4>
+            <div class="questionbody">
+                <div class="question">
+                    <div class="id"><b>MeetupId:</b>
+                        <a href="#">001</a>
+                    </div>
+                    <div class="body"><b>Question:</b>
+                        <p><a href="#">What is the difference between git and github.</a></p>
+                    </div>
+                    <div class="askedby">
+                        <a href="#">username, Monday 21 2019, 11:00 PM.</a>
+                    </div>
+                </div>
+                <div class="question">
+                    <div class="id"><b>MeetupId:</b>
+                        <a href="#">002</a>
+                    </div>
+                    <div class="body"><b>Question:</b>
+                        <p><a href="#">What is the difference between git and github.</a></p>
+                    </div>
+                    <div class="askedby">
+                        <a href="#">username, Monday 21 2019, 11:00 PM.</a>
+                    </div>
+                </div>
+                <div class="question">
+                    <div class="id"><b>MeetupId:</b>
+                        <a href="#">003</a>
+                    </div>
+                    <div class="body"><b>Question:</b>
+                        <p><a href="#">What is the difference between git and github.</a></p>
+                    </div>
+                    <div class="askedby">
+                        <a href="#">username, Monday 21 2019, 11:00 PM.</a>
+                    </div>
+                </div> 
+            </div>
+        <div id="post-question">
+            <h4><a href="questions.html">Ask a question</a></h4>
+            <div id="postquestion-form">
+                <form action="#">
+                    <label for="fname">Meetup Id</label>
+                    <input type="text" id="MeetupId" name="MeetupId" placeholder="MeetupId..">
+                    <textarea id="subject" name="subject" placeholder="Your question.."></textarea>
+                    <input type="submit" value="Post">
+                </form>
+            </div>
+        </div>
+    </div>
+    <!-- End of body section -->
+    
+   <div class="footer">
+       <p>&copy 2019, questioner.com</p>
+   </div>
+
+</body>
+</html>
