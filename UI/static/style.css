@@ -161,6 +161,80 @@ input[type=text]:focus, input[type=password]:focus {
 }
 /* End of homepage Styling */
 
+/* Postquestion page */
+.posted-questions h4 {
+    text-align: center;
+    color: black;
+}
+.posted-questions h4 a {
+    text-decoration: none;
+    color: black;
+}
+.question {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    background: #ffffff;
+    padding: 30px;
+    margin: 10px;
+    border-radius: 6px;
+}
+.question a {
+    text-decoration: none;
+    color: blue;
+}
+.askedby {
+    margin-left: auto;
+}
+.askedby a {
+    color: black;
+}
+.questionactions {
+    display: flex;
+    flex-wrap: wrap;
+}
+.questionactions a {
+    color: black;
+    margin: 30px;
+}
+
+#post-question {
+    margin-bottom: 0;
+    display: flex;
+    flex-direction: column;
+    border-radius: 5px;
+    background-color: white;
+    padding: 20px;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+#postquestion-form {
+    align-self: center;
+}
+#postquestion-form input[type=text], select, textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    margin-top: 6px;
+    margin-bottom: 16px;
+    resize: vertical;
+}
+#postquestion-form textarea {
+    height: 100px;
+}
+#postquestion-form input[type=submit] {
+    background-color: blue;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+
+/* End of post questions */
+
 /* Style the footer */
 .footer {
     position: fixed;
