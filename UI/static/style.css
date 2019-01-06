@@ -1,0 +1,157 @@
+* {
+    box-sizing: border-box;
+}
+
+body, html {
+    margin: 0;
+    margin-bottom: 70px;
+    /* height: 100%; */
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #ddd;
+}
+.header {
+    overflow: hidden;
+    background-color: #f1f1f1;
+    padding: 20px 10px;
+    border-bottom: 1px solid #ddd;
+}
+
+.header a {
+    float: left;
+    color: black;
+    text-align: center;
+    padding: 12px;
+    text-decoration: none;
+    font-size: 18px;
+    line-height: 25px;
+    border-radius: 4px;
+}
+.header a.logo {
+    font-size: 25px;
+    font-weight: bold;
+    color: blue;
+}
+
+.header a:hover {
+    background-color: #ddd;
+}
+
+.header-right {
+    float: right;
+}
+
+.header a.active {
+    background-color: dodgerblue;
+    color: white;
+}
+.topnav {
+    overflow: hidden;
+    background-color: #f1f1f1;
+    margin-top: 0;
+    border-bottom: 3px solid #ddd;
+}
+
+.topnav a {
+    float: left;
+    color: black;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+    border-radius: 6px;
+}
+.topnav a:hover {
+    background-color: #ddd;
+}
+.topnav a.active {
+    background-color: blue;
+    color: white;
+}
+.topnav a.active:hover {
+    opacity: 0.4;
+}
+
+.topnav-right {
+    float: right;
+}
+.welcome {
+    padding: 30px;
+    text-align: center;
+    background-color: blue;
+    color: white;
+    overflow: hidden;
+}
+
+.container {
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex-wrap: wrap;
+    background-color: #ddd;
+}
+.container a{
+    color: dodgerblue;
+}
+.container-signin a {
+    color: dodgerblue;
+}
+.container-signin {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    flex-wrap: wrap;
+    background-color: #ddd;
+}
+input[type=text], input[type=password] {
+    width: 70%;
+    padding: 15px;
+    margin: 5px 0 22px 0;
+    display: block;
+    border: none;
+    background: #f1f1f1;
+}
+input[type=text]:focus, input[type=password]:focus {
+    background: white;
+    outline: none;
+}
+.registerbtn {
+    background-color: dodgerblue;
+    color: white;
+    padding: 16px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 70%;
+    opacity: 0.9;
+}
+
+/* Style the footer */
+.footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color:#f1f1f1;
+    color: dodgerblue;
+    text-align: center;
+ }
+ /* End of footer styling */
+
+
+@media screen and (max-width: 500px) {
+    .topnav, .header a {
+        float: none;
+        display: block;
+        text-align: center;
+    }
+    .topnav-rignt, .header-right {
+        float: none;
+    }
+    .meetupscontainer {
+        flex-direction: column;
+    }
+    #post-question {
+        margin-bottom: 15%;
+    }
+}
