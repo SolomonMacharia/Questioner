@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Questioner</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="static/style.css">
+</head>
+<body>
+    <div class="header">
+        <a href="#" class="logo">Questioner</a>
+        <div class="header-right">
+            <a href="signin.html" class="active">Sign in</a>
+        </div>
+    </div>
+    <div class="topnav">
+        <a href="home.html">Home</a>
+        <a href="questions.html">Questions</a>
+        <div class="topnav-right">
+            <a href="profile.html">Profile</a>
+            <a href="admin.html">Admin</a>
+        </div>
+    </div>
+    <!-- Questions section -->
+    <div class="question-container">
+            <div id="create-meetup">
+                    <h4><a href="admin.html">Create a meetup</a></h4>
+                    <div id="postquestion-form">
+                        <form action="#">
+                            <label for="img">Upload Image</label>
+                            <input type="file" name="pic" accept="image/*">
+                            <label for="fname">Meetup Id</label>
+                            <input type="text" id="MeetupId" name="MeetupId" placeholder="MeetupId..">
+                            <label for="fname">Meetup Tag</label>
+                            <input type="text" id="Meetuptag" name="Meetuptag" placeholder="Meetuptag..">
+                            <textarea id="subject" name="subject" placeholder="Description.."></textarea>
+                            <input type="submit" value="Post">
+                        </form>
+                    </div>
+                </div>
+            </div>
+        <div class="created-meetups-container">
+            <h3><a href="admin.html">Created Meetups</a></h3>
+            <div class="created-meetups">
+                <div class="meetup">
+                    <div class="meetupimg">
+                        <img src="images/java.jpg" alt="java">
+                    </div>
+                    <div class="meetupcontent">
+                        <div class="time">
+                            <p>id: 001</p>
+                            <p><a href="#">Monday, January 21, 5:00 PM</a></p>
+                        </div>
+                        <div class="meetuptag"><h4><a href="#">Java</a></h4></div>
+                        <div class="hostedby">
+                            <p>Hosted by Solomon and o...</p><br>
+                            From <a href="#">An organisation</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="meetup">
+                    <div class="meetupimg">
+                        <img src="images/python.jpeg" alt="python">
+                    </div>
+                    <div class="meetupcontent">
+                        <div class="time">
+                            <p>id: 002</p>
+                            <p><a href="#">Monday, January 21, 5:00 PM</a></p>
+                        </div>
+                        <div class="meetuptag"><h4><a href="#">Python</a></h4></div>
+                        <div class="hostedby">
+                            <p>Hosted by Solomon and o...</p><br>
+                            From <a href="#">An organisation</a>
+                        </div>
+                    </div>
+                </div>
+            </div>    
+                
+        </div>
+    <!-- End of body section -->
+    
+   <div class="footer">
+       <p>&copy 2019, questioner.com</p>
+   </div>
+
+</body>
+</html>
