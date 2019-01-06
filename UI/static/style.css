@@ -135,7 +135,7 @@ input[type=text]:focus, input[type=password]:focus {
 .meetup {
     /* background:  */
     width: 250px;
-    height: 370px;
+    height: 390px;
     overflow: hidden;
     margin: 20px;
     padding: 5px;
@@ -277,6 +277,12 @@ input[type=text]:focus, input[type=password]:focus {
 .created-meetups {
     display: flex;
     flex-wrap: wrap;
+}
+.delete i {
+    padding: 10px;
+    color:  black;
+    font-size: 20px;
+    align-self: center;
 }
 /* End of admin page */
 
