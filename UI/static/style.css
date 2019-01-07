@@ -304,7 +304,15 @@ input[type=text]:focus, input[type=password]:focus {
     background: #ccc;
     border-radius: 6px;
 }
-
+.asked-questions-container {
+    flex: 1;
+}
+.commented-on-container {
+    flex: 1;
+}
+.upcoming-container {
+    flex: 1;
+}
 /* End profile styling */
 
 /* Style the footer */
@@ -334,5 +342,8 @@ input[type=text]:focus, input[type=password]:focus {
     }
     #post-question {
         margin-bottom: 15%;
+    }
+    .profile-container {
+        flex-direction: column;
     }
 }
