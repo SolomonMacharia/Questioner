@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Questioner</title>
+    <link rel="stylesheet" href="static/style.css">
+</head>
+<body>
+    <div class="header">
+        <a href="#" class="logo">Questioner</a>
+        <div class="header-right">
+            <a href="signin.html" class="active">Sign in</a>
+        </div>
+    </div>
+    <div class="topnav">
+        <a href="home.html">Home</a>
+        <a href="questions.html">Questions</a>
+        <div class="topnav-right">
+            <a href="profile.html">Profile</a>
+            <a href="admin.html">Admin</a>
+        </div>
+    </div>
+    <div class="welcome">
+        <h1>Questioner</h1>
+        <p>Questioner helps the meetup organizer prioritize
+        questions to be answered. Other users can vote on asked 
+        questions and they bubble to the topor bottom of the log.</p>
+    </div>
+    <div class="signup-container">
+        <form action="#">
+            <div class="container">
+                <h1>Edit Profile</h1>
+                <p>Enter your preferred details.</p>
+                <hr>
+                <label for="username"><b>Username</b></label>
+                <input type="text" placeholder="Enter preferred username.." name="usrnm" required>           
+                <label for="email"><b>Email</b></label>
+                <input type="text" placeholder="Enter preferred email.." name="email" required>                    
+                <label for="psw"><b>Password</b></label>
+                <input type="password" placeholder="Enter preferred password" name="psw" required>
+                <label for="psw-repeat"><b>Repeat Password</b></label>
+                <input type="password" placeholder="Repeat Password" name="psw-repeat" required>    
+                <button type="submit" class="registerbtn">Update</button>
+                <div class="container-signin">
+                    <a href="profile.html">Back</a>
+                </div>
+            </div>                
+        </form>
+    </div>
+   <div class="footer">
+       <p>&copy 2019, questioner.com</p>
+   </div>
+
+</body>
+</html>
