@@ -32,3 +32,8 @@ def post_question():
 @v1_meetup_blueprint.route('/meetups/upcoming', methods=['GET'])
 def get_all_meetups():
     return jsonify(meetup.all_meetup_records)
+
+@v1_meetup_blueprint.route('/meetups/upcoming/<int:meetupId>', methods=['GET'])
+def get_single_meetup(meetupId):
+    singleMeetup = meetup.fetch_single_meetup(meetupId)
+    return jsonify(singleMeetup)
