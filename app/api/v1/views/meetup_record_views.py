@@ -28,3 +28,7 @@ def post_question():
             "tags": ["tag1", "tag2", "tag3"]
         }]
     }), 201
+
+@v1_meetup_blueprint.route('/meetups/upcoming', methods=['GET'])
+def get_all_meetups():
+    return jsonify(meetup.all_meetup_records)

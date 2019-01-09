@@ -1,5 +1,5 @@
 from datetime import datetime
-
+from uuid import uuid4
 
 class MeetupRecord:
     """ Creates the meetup record model """
@@ -16,12 +16,13 @@ class MeetupRecord:
         self.tags = tags
 
         new_meetup = {
-            "meetupId": meetupId,
-            "createdOn": createdOn,
-            "location": location,
-            "images": images,
-            "happeningOn": happeningOn,
-            "Tags": tags
-
-        }
+        "status": 201,
+        "data": [{
+            "id": uuid4().int,
+            "topic": "The topic",
+            "location": "The venue",
+            "happeningOn": "The meetup date.",
+            "tags": ["tag1", "tag2", "tag3"]
+        }]
+    }
         self.all_meetup_records.append(new_meetup)
