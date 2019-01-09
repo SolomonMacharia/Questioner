@@ -23,9 +23,24 @@ def post_question():
     return jsonify({
         "status": 201,
         "data": [{
+            "qstnId": qstnId,
             "user": uuid4().int, # generate userId
             "meetup": uuid4().int, # generate meetupId
             "title": "The questions' title",
-            "body": "The questions description"
+            "body": "The questions description",
+            "votes": question.votes
         }]
     }), 201
+
+@v1_questions_blueprint.route('/questions/<int:qstnId>/upvote', methods=['PATCH'])
+def upvote(qstnId):
+    votes = len(question.votes) + 1
+    return jsonify({
+        "status": 200,
+        "data": [{
+            "meetupId": uuid4().int,
+            "title": "title",
+            "body": "body",
+            "votes":votes
+        }]
+    })
