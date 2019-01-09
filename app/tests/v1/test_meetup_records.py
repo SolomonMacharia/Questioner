@@ -36,5 +36,10 @@ class TestQuestionModels(unittest.TestCase):
         self.assertEqual(res.status_code, 200)
         self.assertIn("The meetup date.", str(self.meetup))
 
+    def test_api_can_fetch_single_meetup_record(self):
+        res = self.client.post('/api/v1/meetups', data=json.dumps(self.meetup), content_type='application/json')
+        self.assertEqual(res.status_code, 201)
+        res = self.client.get('/api/v1/meetups/upcoming/1', content_type='application/json')
+        self.assertEqual(res.status_code, 200)
 if __name__ == '__main__':
     unittest.main()
