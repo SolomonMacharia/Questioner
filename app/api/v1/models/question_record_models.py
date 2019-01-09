@@ -14,7 +14,7 @@ class QuestionRecord():
         self.meetupId = meetupId
         self.title = title
         self.body = body
-        self.votes = votes
+        self.votes = []
         new_question = {
             "question_id": qstnId,
             "createdOn": createdOn,
@@ -22,7 +22,7 @@ class QuestionRecord():
             "meetupId": meetupId,
             "title": title,
             "body": body,
-            "votes": votes
+            "votes": []
 
         }
         self.all_question_records.append(new_question)
