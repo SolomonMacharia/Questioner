@@ -3,3 +3,4 @@
 [![Coverage Status](https://coveralls.io/repos/github/SolomonMacharia/Questioner/badge.svg?branch=develop)](https://coveralls.io/github/SolomonMacharia/Questioner?branch=develop)
 
 A web application that helps meetup organizers prioritize questions to be answered
+
