@@ -30,6 +30,10 @@ class TestQuestionModels(unittest.TestCase):
         self.assertIn("The question title", str(self.question))
         self.assertIn("The question description", str(self.question))
 
+    def test_api_can_get_all_questions(self):
+            res = self.client.get('/api/v1/questions', data=json.dumps(self.question), content_type='application/json')
+            self.assertEqual(res.status_code, 200)
+
     def test_api_can_upvote_a_question(self):
         res = self.client.patch('/api/v1/questions/1/upvote', data=json.dumps(self.question))
         self.assertEqual(res.status_code, 200)
