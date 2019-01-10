@@ -31,9 +31,15 @@ def post_question():
             "votes": question.votes
         }]
     }), 201
+
 @v1_questions_blueprint.route('/questions', methods=['GET'])
 def get_all_questions():
     return jsonify({"All_questions": question.all_question_records}), 200
+
+@v1_questions_blueprint.route('/questions/<int:qstnId>', methods=['GET'])
+def get_one_question(qstnId):
+    oneqstn = [qstn for qstn in question.all_question_records if qstn['qstnId'] == qstnId]
+    return jsonify({"question": oneqstn[0]}), 200
 
 @v1_questions_blueprint.route('/questions/<int:qstnId>/upvote', methods=['PATCH'])
 def upvote(qstnId):

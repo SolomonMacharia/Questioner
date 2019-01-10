@@ -13,7 +13,7 @@ class TestQuestionModels(unittest.TestCase):
         self.app = create_app()
         self.client = self.app.test_client()
         self.question = {
-            "id": "qstnId",
+            "qstnId": "qstnId",
             # "createdOn": datetime.now(),
             "createdBy": "userId",
             "meetupId": "MeetupId",
@@ -33,6 +33,12 @@ class TestQuestionModels(unittest.TestCase):
     def test_api_can_get_all_questions(self):
             res = self.client.get('/api/v1/questions', data=json.dumps(self.question), content_type='application/json')
             self.assertEqual(res.status_code, 200)
+
+    def test_api_can_get_one_question(self):
+        res = self.client.post('/api/v1/questions', data=json.dumps(self.question), content_type='application/json')
+        self.assertEqual(res.status_code, 201)
+        res = self.client.get('/api/v1/questions/1', content_type='application/json')
+        self.assertEqual(res.status_code, 200)
 
     def test_api_can_upvote_a_question(self):
         res = self.client.patch('/api/v1/questions/1/upvote', data=json.dumps(self.question))

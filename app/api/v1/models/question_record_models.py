@@ -16,7 +16,7 @@ class QuestionRecord():
         self.body = body
         self.votes = []
         new_question = {
-            "question_id": qstnId,
+            "qstnId": qstnId,
             "createdOn": createdOn,
             "createdBy": createdBy,
             "meetupId": meetupId,
