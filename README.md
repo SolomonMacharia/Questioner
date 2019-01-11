@@ -94,7 +94,7 @@ Runs nosetests in verbose
 or simply
 ```
 `pytest`
-```
+
 
 ### A breakdown of the tests
 
