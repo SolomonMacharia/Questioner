@@ -148,12 +148,12 @@ Assert that the number of votes decrease by one
 To deploy the app, create an account on Heroku and follow the steps given to deploy the app.
 
 ## Built with
-8 * Python v.3.6
-  * Flask v.1.02
+ * Python v.3.6
+ * Flask v.1.02
 
 ## Authors
 
-* **Solomon Macharia** - *Initial work
+* **Solomon Macharia** - *Initial work*
 
 # License
 
