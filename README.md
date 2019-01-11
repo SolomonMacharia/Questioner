@@ -32,7 +32,8 @@ A web application that helps meetup organizers prioritize questions to be answer
 
 Ensure you have
 
-*python3 installed
+* Python3 installed
+* Postman
 
 ### Installing 
 
