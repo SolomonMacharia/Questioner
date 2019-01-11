@@ -1,6 +1,7 @@
 # Questioner
 [![Build Status](https://travis-ci.org/SolomonMacharia/Questioner.svg?branch=develop)](https://travis-ci.org/SolomonMacharia/Questioner)
 [![Coverage Status](https://coveralls.io/repos/github/SolomonMacharia/Questioner/badge.svg?branch=develop)](https://coveralls.io/github/SolomonMacharia/Questioner?branch=develop)
+[![Maintainability](https://api.codeclimate.com/v1/badges/94b805eb2e465876b00f/maintainability)](https://codeclimate.com/github/SolomonMacharia/Questioner/maintainability)
 
 A web application that helps meetup organizers prioritize questions to be answered
 
