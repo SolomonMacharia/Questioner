@@ -7,7 +7,7 @@ A web application that helps meetup organizers prioritize questions to be answer
 
 **This application should have the following api endpoints working.**
 
-Question Endpoints
+**Question Endpoints**
 
 | Method | Endpoint | Function |
 | ------ | ------ |------ |
@@ -19,7 +19,7 @@ Question Endpoints
 | PATCH | /api/v1/questions/questionId/downvote | decrements a questions' votes by 1
 | DELETE | /api/v1/questions/questionId | deletes a specific meetup record
 
-Meetup endpoints
+**Meetup endpoints**
 
 | Method | Endpoint | Function |
 | ------ | ------ |------ |
@@ -29,7 +29,7 @@ Meetup endpoints
 | PUT | /api/v1/meetups/meetupId | Updates a specific meetup record
 | DELETE | /api/v1/meetups/meetupId | deletes a specific meetup record
 
-rsvp Endpoints
+**rsvp Endpoints**
 
 | Method | Endpoint | Function |
 | ------ | ------ |------ |
