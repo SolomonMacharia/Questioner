@@ -7,24 +7,36 @@ A web application that helps meetup organizers prioritize questions to be answer
 
 **This application should have the following api endpoints working.**
 
+Question Endpoints
+
 | Method | Endpoint | Function |
 | ------ | ------ |------ |
 | GET | /api/v1/questions | Fetches all question records
 | GET | /api/v1/questions/questionId | Fetches a specific question record
-| GET | /api/v1/meetups/upcoming | Fetches all meetup records
-| GET | /api/v1/meetups/meetupId | Fetches a specific meetup record
 | GET | /api/v1/rsvp/rsvpId | Fetches a specific rsvp record
 | POST | /api/v1/questions | Creates a question record
-| POST | /api/v1/meetups | Creates a meetup record
-| POST | /api/v1/rsvp | Creates an rsvp record
 | PATCH | /api/v1/questions/questionId/upvote | Increments a questions' votes by 1
 | PATCH | /api/v1/questions/questionId/downvote | decrements a questions' votes by 1
+| DELETE | /api/v1/questions/questionId | deletes a specific meetup record
+
+Meetup endpoints
+
+| Method | Endpoint | Function |
+| ------ | ------ |------ |
+| POST | /api/v1/meetups | Creates a meetup record
+| GET | /api/v1/meetups/upcoming | Fetches all meetup records
+| GET | /api/v1/meetups/meetupId | Fetches a specific meetup record
 | PUT | /api/v1/meetups/meetupId | Updates a specific meetup record
+| DELETE | /api/v1/meetups/meetupId | deletes a specific meetup record
+
+rsvp Endpoints
+
+| Method | Endpoint | Function |
+| ------ | ------ |------ |
+| POST | /api/v1/rsvp | Creates an rsvp record
 | PUT | /api/v1/questions/questionId | Updates a specific question record
 | PUT | /api/v1/rsvp/rsvpId | Updates a specific rsvp record
-| DELETE | /api/v1/meetups/meetupId | deletes a specific meetup record
 | DELETE | /api/v1/rsvp/rsvpId | deletes a specific rsvp record
-| DELETE | /api/v1/questions/questionId | deletes a specific meetup record
 
 ## Getting Started
 
