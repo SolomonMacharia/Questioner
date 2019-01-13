@@ -45,7 +45,8 @@ class TestQuestionModels(unittest.TestCase):
         self.assertEqual(res.status_code, 201)
         res = self.client.get('/api/v1/questions/13', content_type='application/json')
         self.assertEqual(res.status_code, 405,)
-        # self.assertIn("Error: The question Id doesn't exist!", str(res))
+        response_data = json.loads(res.data)
+        self.assertEqual(response_data['Error'], "question 13 doesn't exist!")
 
     def test_api_can_upvote_a_question(self):
         res = self.client.patch('/api/v1/questions/1/upvote', data=json.dumps(self.question))
