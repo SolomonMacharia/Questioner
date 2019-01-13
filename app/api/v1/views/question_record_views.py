@@ -18,12 +18,12 @@ def post_question():
         return jsonify({"status": 400, "Error": "All fields must be preset!"}), 400
     if not request.json or not 'title' in request.json or not 'body' in request.json:
         return jsonify({"status": 400, "Error": "Input should be in json format!"}), 400
-    if title == '' or meetupId == '' or body == '' :
+    elif title == '' or meetupId == '' or body == '' :
         return jsonify({"status": 400, "Error": "Fields cannot be empty!"}), 400
-    if not isinstance(meetupId, int):
+    elif not isinstance(meetupId, int):
         return jsonify({"status": 400, "Error": "meetupId cannot be string!"}), 400
-
-    new_question = question.create_question(meetupId, title, body)
+    else:
+        new_question = question.create_question(meetupId, title, body)
     return jsonify({"status": 201, "data": new_question}), 201
     
 @v1_questions_blueprint.route('/questions', methods=['GET'])
@@ -37,7 +37,7 @@ def get_one_question(qstnId):
         # abort(405, message="id should be an integer"), 405
         return jsonify({"status": 405, "Error": "question {} doesn't exist!".format(qstnId)}), 405
     elif not oneqstn:
-        return jsonify({"status": 404, "Error": "question {} doesn't exist!".format(qstnId)}), 400
+        return jsonify({"status": 404, "Error": "question {} doesn't exist!".format(qstnId)}), 405
     return jsonify({"question": oneqstn[0]}), 200
 
 @v1_questions_blueprint.route('/questions/<int:qstnId>/upvote', methods=['PATCH'])
