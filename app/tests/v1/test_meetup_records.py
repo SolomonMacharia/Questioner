@@ -14,10 +14,9 @@ class TestQuestionModels(unittest.TestCase):
         self.client = self.app.test_client()
         self.meetup = {
             "meetupId": "meetupId",
-            "createdOn": "createdOn",
-            "location": "location",
+            "topic": "topic",
+            "location": "The location",
             "images": "images",
-            "happeningOn": "The meetup date.",
             "tags": "tags"
         }
     def tearDown(self):
@@ -26,7 +25,7 @@ class TestQuestionModels(unittest.TestCase):
     def test_api_can_create_a_meetup_record(self):
         res = self.client.post('/api/v1/meetups', data=json.dumps(self.meetup), content_type='application/json')
         self.assertEqual(res.status_code, 201)
-        self.assertIn("The meetup date.", str(self.meetup))
+        self.assertIn("The location", str(self.meetup))
         self.assertIn("images", str(self.meetup))
 
     def test_api_can_fetch_all_meetup_records(self):
@@ -34,12 +33,20 @@ class TestQuestionModels(unittest.TestCase):
         self.assertEqual(res.status_code, 201)
         res = self.client.get('/api/v1/meetups/upcoming', content_type='application/json')
         self.assertEqual(res.status_code, 200)
-        self.assertIn("The meetup date.", str(self.meetup))
+        self.assertIn("The location", str(self.meetup))
 
     def test_api_can_fetch_single_meetup_record(self):
         res = self.client.post('/api/v1/meetups', data=json.dumps(self.meetup), content_type='application/json')
         self.assertEqual(res.status_code, 201)
         res = self.client.get('/api/v1/meetups/upcoming/1', content_type='application/json')
         self.assertEqual(res.status_code, 200)
+
+    def test_api_can_delete_record(self):
+        res = self.client.post('/api/v1/meetups', data=json.dumps(self.meetup), content_type='application/json')
+        self.assertEqual(res.status_code, 201)
+        response = self.client.delete('/api/v1/meetups/upcoming/1/delete', content_type='application/json')
+        self.assertEqual(response.status_code, 204)
+
+
 if __name__ == '__main__':
     unittest.main()
