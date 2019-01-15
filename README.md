@@ -29,7 +29,7 @@ A web application that helps meetup organizers prioritize questions to be answer
 | PUT | /api/v1/meetups/meetupId | Updates a specific meetup record
 | DELETE | /api/v1/meetups/meetupId | deletes a specific meetup record
 
-**rsvp Endpoints**
+**RSVP Endpoints**
 
 | Method | Endpoint | Function |
 | ------ | ------ |------ |
@@ -113,6 +113,7 @@ or simply
 ### A breakdown of the tests
 
 **Create a questions payload** in the setUp method
+
 
 **Create a meetups payload** in the setUp method
 
