@@ -19,3 +19,5 @@ after_success:
   - coveralls
   - coverage xml
   - codeclimate-test-reporter
+  
+  
