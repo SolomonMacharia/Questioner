@@ -11,23 +11,13 @@ meetup = MeetupRecord()
 def post_question():
     data = request.get_json()
 
-    meetupId = len(meetup.all_meetup_records) + 1
-    createdOn = datetime.now()
-    location = data["location"]
+    topic = data["topic"]
     images = data["images"]
-    happeningOn = data["happeningOn"]
     tags = data["tags"]
+    location = data["location"]
 
-    meetup.create_meetup(meetupId, createdOn, location, images, happeningOn, tags )
-    return jsonify({
-        "status": 201,
-        "data": [{
-            "topic": "The topic",
-            "location": "The venue",
-            "happeningOn": "The meetup date.",
-            "tags": ["tag1", "tag2", "tag3"]
-        }]
-    }), 201
+    mtp = meetup.create_meetup(topic, location, images, tags )
+    return jsonify({"status": 201, "data": mtp}),201
 
 @v1_meetup_blueprint.route('/meetups/upcoming', methods=['GET'])
 def get_all_meetups():
@@ -37,3 +27,10 @@ def get_all_meetups():
 def get_single_meetup(meetupId):
     singleMeetup = meetup.fetch_single_meetup(meetupId)
     return jsonify(singleMeetup)
+
+@v1_meetup_blueprint.route('/meetups/upcoming/<int:meetupId>/delete', methods=['DELETE'])
+def delete_meetup(meetupId):
+    mtp = [meetup for meetup in meetup.all_meetup_records if 'meetupId' == meetupId]
+    if mtp:
+        meetup.all_meetup_records.remove(mtp)
+    return "deleted!"
