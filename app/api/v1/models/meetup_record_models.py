@@ -1,4 +1,4 @@
-from flask import jsonify, abort
+from flask import jsonify, abort, json
 from datetime import datetime
 from uuid import uuid4
 
@@ -7,30 +7,32 @@ class MeetupRecord:
     def __init__(self, *args):
         self.all_meetup_records = []
 
-    def create_meetup(self, meetupId, createdOn, location, images, happeningOn, tags):
+    def create_meetup(self, topic, location, images, tags):
         """ Adds a new question to the all_question_records list """
-        self.meetupId = meetupId
-        self.createdOn = datetime.now()
-        self.location = location
-        self.images = images
-        self.happeningOn = happeningOn
-        self.tags = tags
-
         new_meetup = {
-        "status": 201,
-        "data": [{
-            "id": uuid4().int,
-            "topic": "The topic",
-            "location": "The venue",
-            "happeningOn": "The meetup date.",
-            "tags": ["tag1", "tag2", "tag3"]
-        }]
-    }
+            "meetupId": len(self.all_meetup_records) + 1,
+            "topic": topic,
+            "images": images,
+            "tags": tags,
+            "location": location,
+            "createdOn": datetime.now(),
+            # "happeningOn": json.loads(str(datetime))
+        }
         self.all_meetup_records.append(new_meetup)
+        return new_meetup
 
     def fetch_single_meetup(self, meetupId):
         """ Fetches a single meetup based on the meetupId"""
-        for meetup in self.all_meetup_records:
-            if meetupId == int(meetupId):
-                return meetup
+        meetup = [meetup for meetup in self.all_meetup_records if meetup['meetupId'] == meetupId]
+        if meetup:
+            return meetup
         return abort(404, "Error: Meetup {} does'nt exist.".format(meetupId))
+
+    def delete_meetup(self, meetupId):
+        """ Deletes a specific meetup record """
+        meetup = [meetup for meetup in self.all_meetup_records if 'meetupId' == meetupId]
+        try:
+            if meetup:
+                self.all_meetup_records.remove(meetup)
+        except ValueError:
+            abort(400, "Error: meetup {} doesn't exist!".format(meetupId))
