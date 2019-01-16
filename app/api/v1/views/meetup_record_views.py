@@ -28,9 +28,8 @@ def get_single_meetup(meetupId):
     singleMeetup = meetup.fetch_single_meetup(meetupId)
     return jsonify(singleMeetup)
 
-@v1_meetup_blueprint.route('/meetups/upcoming/<int:meetupId>/delete', methods=['DELETE'])
+@v1_meetup_blueprint.route('/meetups/delete/<int:meetupId>', methods=['DELETE'])
 def delete_meetup(meetupId):
-    mtp = [meetup for meetup in meetup.all_meetup_records if 'meetupId' == meetupId]
-    if mtp:
-        meetup.all_meetup_records.remove(mtp)
-    return "deleted!"
+    Meetup = meetup.delete_meetup(meetupId)
+    return jsonify({"status": 204, "Meetup": Meetup})
+    
