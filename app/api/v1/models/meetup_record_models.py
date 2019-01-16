@@ -4,7 +4,7 @@ from uuid import uuid4
 
 class MeetupRecord:
     """ Creates the meetup record model """
-    def __init__(self, *args):
+    def __init__(self):
         self.all_meetup_records = []
 
     def create_meetup(self, topic, location, images, tags):
@@ -30,9 +30,8 @@ class MeetupRecord:
 
     def delete_meetup(self, meetupId):
         """ Deletes a specific meetup record """
-        meetup = [meetup for meetup in self.all_meetup_records if 'meetupId' == meetupId]
-        try:
-            if meetup:
-                self.all_meetup_records.remove(meetup)
-        except ValueError:
-            abort(400, "Error: meetup {} doesn't exist!".format(meetupId))
+        Meetup = [Meetup for Meetup in self.all_meetup_records if Meetup['meetupId'] == meetupId]
+        if Meetup:
+            self.all_meetup_records.remove(Meetup[0])
+        return abort(400, "Error: meetup {} doesn't exist!".format(meetupId))
+        
