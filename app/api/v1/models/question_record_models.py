@@ -23,14 +23,16 @@ class QuestionRecord():
         return new_question
         
     def upvote(self, qstnId):
-        for qstn in self.all_question_records:
-            if qstn['qstnId'] == qstnId:
-                qstn['votes'] = qstn['votes'] + 1
-                return qstn
+        qstn = [qstn for qstn in self.all_question_records if qstn['qstnId'] == qstnId]
+        if  qstn:
+            qstn = qstn[0]
+            qstn['votes'] = qstn['votes'] + 1
+            return qstn
     
     def downvote(self, qstnId):
-        for qstn in self.all_question_records:
-            if qstn['qstnId'] == qstnId:
-                if qstn['votes'] != 0:
-                    qstn['votes'] = qstn['votes'] - 1
-                return qstn
+        qstn = [qstn for qstn in self.all_question_records if qstn['qstnId'] == qstnId]
+        if qstn:
+            qstn = qstn[0]
+            if qstn['votes'] != 0:
+                qstn['votes'] = qstn['votes'] - 1
+            return qstn
