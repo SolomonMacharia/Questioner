@@ -5,12 +5,12 @@ class User:
     def __init__(self):
         self.db = all_users
 
-    def create_user(self, username, email, password, repeatPassword):
+    def create_user(self, username, email, password, confirmPassword):
         new_user = {
             "username": username,
             "email": email,
             "password": password,
-            "repeatPassword": repeatPassword
+            "confirmPassword": confirmPassword
         }
         if new_user:
             self.db.append(new_user)
