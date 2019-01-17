@@ -86,79 +86,73 @@ Run the above endpoints to test that they are functioning as expected:
 
 ## Running the tests
 
-To run the tests in the **command line**, use either:
+simply run
 
->`python tests.py` ,
-
-Runs unittest
-
-or
-
->`nosetests`
-
-Runs nosetest
-
-or
-
->`nosetests -v`
-
-Runs nosetests in verbose
-```
-
-or simply
-```
 `pytest`
-
 
 ### A breakdown of the tests
 
-**Create a questions payload** in the setUp method
+**Testing the `POST` question endpoint**
 
+To test the **api/v1/questions** endpoint, use the following endpoint.
 
-**Create a meetups payload** in the setUp method
+ ```
+        payload = {
+            'meetupId': int,
+            'title': 'title',
+            'body': 'body
+        }
+```
 
-Test the **POST /api/v1/questions** endpoint.
+**Testing the `POST` meetup endpoint**
 
-Using flasks test client call the **post(/api/v1/questions)** method, and feed it the questions payload. Assert that this returns a **201** status code meaning the question has been successfully created. Use the test client again and call the **get(/api/v1/questions)** method to see that the created question is returned. Assert that the question data returned is equal to the one created. Assert The method is returning a **200** status code.
+To test the **api/v1/meetups** endpoint, use the following endpoint.
 
-Try posting a question with an empty field/(s) and assert that the returned result is a **400** status code and the relevant error message.
+ ```
+        payload = {
+            "images": "images",
+            "location": "The venue",
+            "tags": [
+                "tag1",
+                "tag2",
+                "tag3"
+            ],
+            "topic": " "
+        }
+```
 
-Test the **POST /api/v1/meetups** endpoint.
+**Testing the create rsvs  endpoint**
 
-Using flasks test client call the **post(/api/v1/meetups)** method, and feed it the meetups payload. Assert that this returns a **201** status code meaning the meetup has been successfully created. Use the test client again and call the **get(/api/v1/meetups)** method to see that the created meetup is returned. Assert that the meetup data returned is equal to the one created. Assert The method is returning a **200** status code.
+To test the **api/v1/meetups/meetupId/rsvs** endpoint, use the following endpoint.
 
-Try posting a meetup with an empty field/(s) and assert that the returned result is a **400** status code and the relevant error message.
+ ```
+        payload = {
+            "meetupId": 343,
+            "topic": "topic",
+            "status": "status"
+        }
+```
 
-Test the **GET /api/v1/questions** endpoint.
+**Testing the register user endpoint**
 
-Using flasks test client call the **post(/api/v1/questions)** method, and feed it the questions payload. Assert that this returns a **201** status code meaning the question has been successfully created. Use the test client again and call the **get(/api/v1/questions)** method to see that the created question is returned. Assert that the question data returned is equal to the one created. Assert The method is returning a **200** status code.
+To test the **api/v1/users** endpoint, use the following endpoint.
 
-Test the **GET /api/v1/meetups** endpoint.
-
-Using flasks test client call the **post(/api/v1/meetups)** method, and feed it the meetups payload. Assert that this returns a **201** status code meaning the meetup has been successfully created. Use the test client again and call the **get(/api/v1/meetups)** method to see that the created meetup is returned. Assert that the meetup data returned is equal to the one created. Assert The method is returning a **200** status code.
-
-Test the **GET /api/v1/questions/questionId** endpoint.
-
-Using flasks test client call the **post(/api/v1/questions)** method, and feed it the questions payload. Assert that this returns a **201** status code meaning the question has been successfully created. Use the test client again and call the **get(/api/v1/questions/questionId)** method to see that the created question is returned. Assert that the question data returned is equal to the one created. Assert The method is returning a **200** status code.
-
-Try getting a questionId that does not exist using the **get(/api/v1/questions/invalidquestionId)** and assert that the returned result is a **204** status code and the relevant error message.
-
-Test the **GET /api/v1/meetups/meetupId** endpoint.
-
-Using flasks test client call the **post(/api/v1/meetups)** method, and feed it the meetups payload. Assert that this returns a **201** status code meaning the meetup has been successfully created. Use the test client again and call the **get(/api/v1/meetups/meetupId)** method to see that the created meetup is returned. Assert that the meetup data returned is equal to the one created. Assert The method is returning a **200** status code.
-
-Try getting a meetupId that does not exist using the **get(/api/v1/questions/invalidId)** and assert that the returned result is a **204** status code and the relevant error message.
-
-Test the **PATCH /api/v1/QUESTION/meetupId/upvote** endpoint.
-
-Assert that the number of votes increment by one
-
-Test the **PATCH /api/v1/QUESTION/meetupId/downvote** endpoint.
-
-Assert that the number of votes decrease by one
+ ```
+        payload = {
+            "meetupId": 343,
+            "topic": "topic",
+            "status": "status"
+        }
+```
 
 ## Deployment
+
 To deploy the app, create an account on Heroku and follow the steps given to deploy the app.
+
+**App Demo**
+```
+https://git.heroku.com/bootcamp-questioner.git
+```
 
 ## Built with
  * Python v.3.6
