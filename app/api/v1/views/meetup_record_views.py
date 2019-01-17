@@ -1,5 +1,6 @@
 from flask import jsonify, Blueprint, request, json
 from ..models.meetup_record_models import MeetupRecord
+from ..utils.validators import validate
 from datetime import datetime
 from uuid import uuid4
 
@@ -9,8 +10,10 @@ meetup = MeetupRecord()
 
 @v1_meetup_blueprint.route('/meetups', methods=['POST'])
 def post_question():
-    data = request.get_json()
-
+    meetup_data = request.get_json()
+    data = validate(meetup_data, required_fields=["topic", "images", "tags", "location"])
+    if type(data) == list:
+        return jsonify({"status": 400, "errors": data}), 400
     topic = data["topic"]
     images = data["images"]
     tags = data["tags"]
