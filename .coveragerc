@@ -1,0 +1,4 @@
+pytest --cov-config .coveragerc
+--cov=app
+app/tests/
+omit = tests/*
