@@ -9,6 +9,8 @@ A web application that helps meetup organizers prioritize questions to be answer
 
 **Question Endpoints**
 
+[![Run in Postman](https://run.pstmn.io/button.svg)](https://app.getpostman.com/run-collection/7f9c41ed06a08cadc841)
+
 | Method | Endpoint | Function |
 | ------ | ------ |------ |
 | GET | /api/v1/questions | Fetches all question records
