@@ -5,13 +5,12 @@ all_rsvps = []
 class RsvpModel:
     def __init__(self):
         self.db = all_rsvps
-    def create_rsvp(self, meetupId, topic, status):
+    def create_rsvp(self, topic, status):
         new_rsvp = {
-            "meetupId": meetupId,
+            "meetupId": len(self.db) + 1,
             "topic": topic,
             "status": status
         }
-        rsvp = self.db.append(new_rsvp)
-
-        return rsvp
+        self.db.append(new_rsvp)
+        return new_rsvp
 

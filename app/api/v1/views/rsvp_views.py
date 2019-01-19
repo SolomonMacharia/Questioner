@@ -8,12 +8,12 @@ v1_rsvp_blueprint = Blueprint('rsvp', __name__, url_prefix='/api/v1')
 @v1_rsvp_blueprint.route('/meetups/<int:meetupId>/rsvps', methods=['POST'])
 def post_rsvp(meetupId):
     rsvp_data = request.get_json()
-    data = validate(rsvp_data, required_fields=["meetupId", "topic", "status"])
+    # import pdb; pdb.set_trace()
+    data = validate(rsvp_data, required_fields=["topic", "status"])
     if type(data) == list:
         return jsonify({"status": 400, "error": data}), 400
-    meetupId = data['meetupId']
     topic = data["topic"]
     status = data["status"]
 
-    reserve = RsvpModel().create_rsvp(meetupId, topic, status)
-    return jsonify({"status":201, "Meeup rsvp": reserve}), 201
+    reserve = RsvpModel().create_rsvp(topic, status)
+    return jsonify({"status":201, "Meetup rsvp": reserve}), 201
